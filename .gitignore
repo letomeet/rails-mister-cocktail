@@ -20,9 +20,5 @@
 /public/packs
 /public/packs-test
 /node_modules
-
-.DS_Store
-
-# Ignore application configuration
-/config/application.yml
-.env*
+yarn-debug.log*
+.yarn-integrity
