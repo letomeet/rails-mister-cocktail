@@ -35,3 +35,5 @@ class DosesController < ApplicationController
     params.require(:dose).permit(:cocktail_id, :description, :ingredient_id)
   end
 end
+
+
