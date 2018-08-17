@@ -1,15 +1,14 @@
-<div class="banner home-banner cocktail-banner">
-  <div class="banner-content">
-    <h1>Add A New Cocktail</h1>
-  </div>
-</div>
-
-
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h3>What is the name your new cocktail ?</h3>
-        <%= render 'form', cocktail: @cocktail %>
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Create a new cocktail</h1>
+
+      <%= simple_form_for @cocktail do |f| %>
+        <%= f.input :name %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 </div>
