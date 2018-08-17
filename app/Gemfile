@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.4.4'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -8,9 +7,9 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.1.5'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -29,27 +28,23 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+# gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Gem for the Front-End
-gem 'bootstrap-sass'
-gem 'font-awesome-sass'
-gem 'simple_form'
-gem 'autoprefixer-rails'
-gem 'jquery-rails' # Add this line if you use Rails 5.1
-
-gem 'figaro'
-gem 'cloudinary'
-gem 'carrierwave', '~> 1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Front gem
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass', '~> 3.3'
+gem 'font-awesome-sass'
+gem 'simple_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -65,5 +60,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'cloudinary'
